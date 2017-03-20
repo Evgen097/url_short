@@ -1,0 +1,25 @@
+{
+  "name": "url_short",
+  "version": "1.0.0",
+  "engines": {
+    "node": "v4.7.3",
+    "npm": "2.15.11"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.25"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
