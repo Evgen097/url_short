@@ -1,5 +1,6 @@
 // note_routes.js
 var ObjectID = require('mongodb').ObjectID;
+var server_url = "https://myurlshort.herokuapp.com/new/";
 module.exports = function(app, db) {
   app.get('/new/', (req, res) => {
         console.log('hello');
@@ -70,13 +71,16 @@ module.exports = function(app, db) {
                 if (err) { 
                    res.send({ 'error': 'An error has occurred' }); 
                 } else {
-                    var obj = { "original_url":url_long, "short_url":"https://api-progects-evgenkaban.c9users.io/new/"+ max_short_url }
+                  
+                    var obj = { "original_url":url_long, "short_url":server_url+ max_short_url }
+                    //var obj = { "original_url":url_long, "short_url":"https://api-progects-evgenkaban.c9users.io/new/"+ max_short_url }
+
                     res.send( JSON.stringify(obj) );
                 }
                 });
               })
         }else{
-          const note = { 'short_url': "https://api-progects-evgenkaban.c9users.io/new/"+ docs[0].short_url, 'original_url': docs[0].long_url };
+          const note = { 'short_url': server_url+ docs[0].short_url, 'original_url': docs[0].long_url };
           //console.log( JSON.stringify(note) )
           res.send( JSON.stringify(note) );
             //console.log(docs[0].long_url)
